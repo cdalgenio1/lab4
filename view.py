@@ -21,7 +21,7 @@ class ConnectTacToeView:
         j = -1
         while not 0 <= i < 6:
             try:
-                i = int(input(f"Choose a row    [0-6]: "))
+                i = int(input(f"Choose a row    [0-5]: "))
             except KeyboardInterrupt:
                 exit()
             except:
@@ -29,21 +29,21 @@ class ConnectTacToeView:
 
         while not 0 <= j < 7:
             try:
-                j = int(input(f"Choose a column [0-7]: "))
+                j = int(input(f"Choose a column [0-6]: "))
             except KeyboardInterrupt:
                 exit()
             except:
                 ...
 
             print()
-            return i, j
+        return i, j
 
-    def show_winner(self, winner: Player | None):
+    def show_winner(self, winner: Player | None): #fix this part
         if winner == Player.P1:
-            print("Congratulations, Player 1!, You have officially won!")
-        elif winner == Player.P2:
             print("Congratulations, Player 2!, You have officially won!")
-        elif not winner:
+        elif winner == Player.P2:
+            print("Congratulations, Player 1!, You have officially won!")
+        elif winner is None:
             print("Looks like we have a draw here...")
         else:
             pass 

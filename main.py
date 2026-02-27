@@ -14,14 +14,9 @@ class ConnectTacToeController:
         while not model.is_game_done:
             #model.start_turn()
             view.show_player(model.current_player)
-            if model.current_player == Player.P1:
-                view.show_grid(model.grid)
-                i, j = view.ask_for_coords() #input what it asls
-                model.choose_cell(i, j)
-            
-            else:
-                i, j = model.get_random_coords()
-                model.choose_cell(i, j)
+            view.show_grid(model.grid)
+            i, j = view.ask_for_coords() #input what it asls
+            model.choose_cell(i, j)
 
         view.show_winner(model.winner)
 
